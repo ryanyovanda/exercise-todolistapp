@@ -1,0 +1,23 @@
+services:
+  postgres:
+    container_name: todolist-db
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 5434:5432
+
+#  redis:
+#    container_name: fezz4u-cache
+#    image: redis:alpine
+#    restart: always
+#    env_file:
+#      - .env
+#    ports:
+#      - ${REDIS_PORT}:6379
+#    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
+
+volumes:
+  postgres:
+#  redis:
